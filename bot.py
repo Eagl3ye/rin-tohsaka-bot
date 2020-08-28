@@ -47,7 +47,7 @@ async def mudae_event(ctx, number=1):
 	if number < 1:
 		number = 1
 	for _ in range(number):
-		embed.add_field(name='📍|'+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
+		embed.add_field(name='📍| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
 
 	await ctx.send(embed=embed)
     #await ctx.send(":heart_exclamation: **Mudae Event** :heart_exclamation: \n```📍 | " + events[randomize()] + "\n```")
@@ -85,12 +85,13 @@ async def arena_event(ctx):
 @client.command()
 async def baog(ctx):
 	await ctx.send(content='<a:baoggif:746755743809667193>')
+	await ctx.delete()
 
 @client.command()
 async def ex(ctx):
 	await ctx.send('Wished by <@487935377219256343>')
 	embed = discord.Embed(
-		description='Monkey D. Luffy\nOne Piece\n**565**<:kakera:748810456671453296>',
+		description='**Monkey D. Luffy** \n\nOne Piece\n**565**<:kakera:748810456671453296>',
 		colour=discord.Colour.green()
 		)
 	embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
