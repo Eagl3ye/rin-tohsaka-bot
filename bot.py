@@ -62,7 +62,7 @@ async def arena_event(ctx):
 	first = '10,000 Tatsumaki Credits | 10,000 IdleRPG Credits | 1000 kakera'
 	second = '5,000 Tatsumaki Credits | 5,000 IdleRPG Credits | 500 kakera'
 	third = '1,000 Tatsumaki Credits | 1,000 IdleRPG Credits | 100 Kakera'
-	embed.add_field(name='Eligible to:', value='<@&742333248125927425> and to all with IdleRPG accounts', inline=False)
+	embed.add_field(name='Eligible to:', value='Mudae and IdleRPG players', inline=False)
 	embed.add_field(name='Rewards:', value='-', inline=False)
 	embed.add_field(name=':first_place: -', value=first, inline=True)
 	embed.add_field(name=':second_place: -', value=second, inline=True)
@@ -73,12 +73,12 @@ async def arena_event(ctx):
 	embed.add_field(name=':small_orange_diamond:| +10 :crossed_swords: stats', value='Yandere Division', inline=True)
 	embed.add_field(name=':small_orange_diamond:| +5 :crossed_swords: +5 :shield: stats', value='Tsundere Division', inline=True)
 	embed.add_field(name=':small_orange_diamond:| +10 :shield: stats', value='Kuudere Division', inline=True)
-	embed.add_field(name=':small_orange_diamond:| +7.5 :notebook_with_decorative_cover: stats', value='Dandere Division', inline=True)
+	embed.add_field(name=':small_orange_diamond:| +8 :notebook_with_decorative_cover: stats', value='Dandere Division', inline=True)
 	embed.add_field(name=':small_orange_diamond:| +40% :heartpulse: stats', value='Deredere Division', inline=True)
 	embed.add_field(name=':small_orange_diamond:| Any stats', value='Combo Division', inline=True)
 	
 	embed.add_field(name='Where:', value='<#745137728793870366>', inline=True)
-	embed.set_footer(text='When: Friday, Aug-28-2020, 5:45 PM Local Time')
+	embed.set_footer(text='When: Friday, Aug-28-2020, 9:00 PM Local Time')
 	await ctx.send(embed=embed)
     #await ctx.send(":heart_exclamation: **Mudae Event** :heart_exclamation: \n```📍 | " + events[randomize()] + "\n```")
 
