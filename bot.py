@@ -88,10 +88,6 @@ async def baog(ctx):
 	await ctx.send(content='<a:baoggif:746755743809667193>')
 	await ctx.delete()
 
-
-def check(reaction, user):
-	return (reaction.message.id == msg.id and user.id == 336068309789310979) #487935377219256343
-
 @client.command()
 async def ex(ctx):
 	await ctx.send('Wished by <@487935377219256343>')
@@ -103,6 +99,9 @@ async def ex(ctx):
 	msg = await ctx.send(embed=embed)
 	await msg.add_reaction('\U0001F496')
 	
+	def check(reaction, user):
+		return (reaction.message.id == msg.id and user.id == 336068309789310979) #487935377219256343
+
 	try:
 		reaction, user = await client.wait_for("reaction_add", check=check, timeout=15)
 	except asyncio.TimeoutError:
