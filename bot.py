@@ -99,12 +99,12 @@ async def ex(ctx):
 	msg = await ctx.send(embed=embed)
 	await msg.add_reaction('\U0001F496')
 	
-	newembed = discord.Embed(
+	new_embed = discord.Embed(
 		description='**Monkey D. Luffy** \n\nOne Piece\n**565**<:kakera:748810456671453296>',
 		colour=discord.Colour.dark_red()
 		)
-	newembed.set_image(url='https://i.imgur.com/9UVKIr1.png')
-	newembed.set_footer(icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
+	new_embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
+	new_embed.set_footer(icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
 
 	def check(reaction, user):
 		return (reaction.message.id == msg.id and user.id == 336068309789310979) #487935377219256343
