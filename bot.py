@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import random
+import asyncio
 
 def mudae_randomize():
 	container = [("a"*1),("h"*2),("g"*4),("k"*5),("c"*6),("b"*8),("d"*9),("e"*11),("f"*16),("j"*18),("i"*20)]
