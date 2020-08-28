@@ -105,6 +105,9 @@ async def ex(ctx):
 	try:
 		reaction, user = await client.wait_for("reaction_add", check=check, timeout=15)
 	except asyncio.TimeoutError:
-		print('Rheana reacted')
+		print('Timeout')
+
+	print('Rheana reacted')
+	#await msg.edit(embed=new_embed)
 
 client.run(os.environ['TOKEN'])
