@@ -104,7 +104,7 @@ async def ex(ctx):
 	await msg.add_reaction('\U0001F496')
 	
 	try:
-		reaction, user = await ctx.wait_for("reaction_add", check=check, timeout=15)
+		reaction, user = await client.wait_for("reaction_add", check=check, timeout=15)
 	except asyncio.TimeoutError:
 		print('Rheana reacted')
 
