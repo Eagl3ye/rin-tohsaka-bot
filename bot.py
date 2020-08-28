@@ -90,8 +90,7 @@ async def baog(ctx):
 async def ex(ctx):
 	await ctx.send('Wished by <@487935377219256343>')
 	embed = discord.Embed(
-		title='Monkey D. Luffy',
-		description='One Piece\n**565**<:kakera:748810456671453296>',
+		description='Monkey D. Luffy\nOne Piece\n**565**<:kakera:748810456671453296>',
 		colour=discord.Colour.green()
 		)
 	embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
