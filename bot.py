@@ -101,8 +101,9 @@ async def ex(ctx):
 	embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
 	msg = await ctx.send(embed=embed)
 	await msg.add_reaction('\U0001F496')
+	
 	try:
-		reaction, user = await self.ctx.bot.wait_for("reaction_add", check=check, timeout=15)
+		reaction, user = await self.ctx.client.wait_for("reaction_add", check=check, timeout=15)
 	except asyncio.TimeoutError:
 		print('Rheana reacted')
 
