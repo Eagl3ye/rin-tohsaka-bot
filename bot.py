@@ -60,14 +60,14 @@ async def arena_event(ctx):
 		description='Hosted by: <@336068309789310979>',
 		colour=discord.Colour.gold()
 		)
-	first = '10,000 Tatsumaki Credits | 10,000 IdleRPG Credits | 1000 kakera'
-	second = '5,000 Tatsumaki Credits | 5,000 IdleRPG Credits | 500 kakera'
-	third = '1,000 Tatsumaki Credits | 1,000 IdleRPG Credits | 100 Kakera'
+	first = '<@!273035462996918273>\n10,000 Tatsumaki Credits | 10,000 IdleRPG Credits | 1000 kakera'
+	second = '<@!487935377219256343>\n5,000 Tatsumaki Credits | 5,000 IdleRPG Credits | 500 kakera'
+	third = '<@!523701663937200134>\n1,000 Tatsumaki Credits | 1,000 IdleRPG Credits | 100 Kakera'
 	embed.add_field(name='Eligible to:', value='Mudae and IdleRPG players', inline=False)
 	embed.add_field(name='Rewards and Winners:', value='-', inline=False)
-	embed.add_field(name=':first_place: <@!273035462996918273>', value=first, inline=True)
-	embed.add_field(name=':second_place: <@!487935377219256343>', value=second, inline=True)
-	embed.add_field(name=':third_place: <@!523701663937200134>', value=third, inline=True)
+	embed.add_field(name=':first_place: ', value=first, inline=True)
+	embed.add_field(name=':second_place: ', value=second, inline=True)
+	embed.add_field(name=':third_place: ', value=third, inline=True)
 	embed.add_field(name='Score Tally:', value='https://controlc.com/6b6f4fab', inline=False)
 	join = 'Use `$skills` and set the skills for each of your 6 waifus/husbandos to the following divisions:' 
 	embed.add_field(name='How to join:', value=join, inline=False)
