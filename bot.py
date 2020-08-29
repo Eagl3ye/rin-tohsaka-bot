@@ -64,11 +64,11 @@ async def arena_event(ctx):
 	second = '5,000 Tatsumaki Credits | 5,000 IdleRPG Credits | 500 kakera'
 	third = '1,000 Tatsumaki Credits | 1,000 IdleRPG Credits | 100 Kakera'
 	embed.add_field(name='Eligible to:', value='Mudae and IdleRPG players', inline=False)
-	embed.add_field(name='Rewards:', value='-', inline=False)
-	embed.add_field(name=':first_place: <@273035462996918273>', value=first, inline=True)
-	embed.add_field(name=':second_place: <@487935377219256343>', value=second, inline=True)
-	embed.add_field(name=':third_place: <@523701663937200134>', value=third, inline=True)
-
+	embed.add_field(name='Rewards and Winners:', value='-', inline=False)
+	embed.add_field(name=':first_place: <@!273035462996918273>', value=first, inline=True)
+	embed.add_field(name=':second_place: <@!487935377219256343>', value=second, inline=True)
+	embed.add_field(name=':third_place: <@!523701663937200134>', value=third, inline=True)
+	embed.add_field(name='Score Tally:', value='https://controlc.com/6b6f4fab', inline=False)
 	join = 'Use `$skills` and set the skills for each of your 6 waifus/husbandos to the following divisions:' 
 	embed.add_field(name='How to join:', value=join, inline=False)
 	embed.add_field(name=':small_orange_diamond:| +10 :crossed_swords: stats', value='Yandere Division', inline=True)
