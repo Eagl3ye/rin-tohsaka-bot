@@ -65,9 +65,9 @@ async def arena_event(ctx):
 	third = '1,000 Tatsumaki Credits | 1,000 IdleRPG Credits | 100 Kakera'
 	embed.add_field(name='Eligible to:', value='Mudae and IdleRPG players', inline=False)
 	embed.add_field(name='Rewards:', value='-', inline=False)
-	embed.add_field(name=':first_place: -', value=first, inline=True)
-	embed.add_field(name=':second_place: -', value=second, inline=True)
-	embed.add_field(name=':third_place: -', value=third, inline=True)
+	embed.add_field(name=':first_place: <@273035462996918273>', value=first, inline=True)
+	embed.add_field(name=':second_place: <@487935377219256343>', value=second, inline=True)
+	embed.add_field(name=':third_place: <@523701663937200134>', value=third, inline=True)
 
 	join = 'Use `$skills` and set the skills for each of your 6 waifus/husbandos to the following divisions:' 
 	embed.add_field(name='How to join:', value=join, inline=False)
@@ -79,7 +79,7 @@ async def arena_event(ctx):
 	embed.add_field(name=':small_orange_diamond:| Any stats', value='Combo Division', inline=True)
 	
 	embed.add_field(name='Where:', value='<#745137728793870366>', inline=True)
-	embed.set_footer(text='When: Friday, Aug-28-2020, 9:00 PM Local Time')
+	embed.set_footer(text='When: COMPLETED ~~Friday, Aug-28-2020, 9:00 PM Local Time~~')
 	await ctx.send(embed=embed)
     #await ctx.send(":heart_exclamation: **Mudae Event** :heart_exclamation: \n```📍 | " + events[randomize()] + "\n```")
 
