@@ -90,7 +90,7 @@ async def baog(ctx):
 
 @client.command()
 async def ex(ctx):
-	if ctx.message.author.id = 336068309789310979 or ctx.message.author.id = 487935377219256343:
+	if ctx.message.author.id == 336068309789310979 or ctx.message.author.id == 487935377219256343:
 		await ctx.send('Wished by <@487935377219256343>')
 		embed = discord.Embed(
 			description='**Monkey D. Luffy** \n\nOne Piece\n**565**<:kakera:748810456671453296>',
