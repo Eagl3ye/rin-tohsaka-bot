@@ -99,21 +99,30 @@ async def ex(ctx):
 	msg = await ctx.send(embed=embed)
 	await msg.add_reaction('\U0001F496')
 	
+	
+	count = 0
+	useruser = 0
+	def check(reaction, user):
+		if count < 0:
+			print(str(user.id))
+			id_list = [336068309789310979,487935377219256343]
+			useruser = user
+			count += 1
+			return (reaction.message.id == msg.id and user.id in id_list) #487935377219256343
+
 	new_embed = discord.Embed(
 		description='**Monkey D. Luffy** \n\nOne Piece\n**565**<:kakera:748810456671453296>',
-		colour=discord.Colour.dark_red()
+		colour=discord.Colour.red()
 		)
 	new_embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
-	new_embed.set_footer(text='Belongs to Reinn_sama', icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
+	new_embed.set_footer(text='Belongs to Reinn_sama', icon_url=useruser.avatar_url)
 
-	def check(reaction, user):
-		return (reaction.message.id == msg.id and user.id == 336068309789310979) #487935377219256343
 	try:
-		reaction, user = await client.wait_for("reaction_add", check=check, timeout=15)
+		reaction, user = await client.wait_for("reaction_add", check=check, timeout=25)
 	except asyncio.TimeoutError:
 		print('Timeout')
 	else:
-		print('Rheana reacted')
+		print(str(useruser))
 		await msg.edit(embed=new_embed)
 		await ctx.send('Welcome to the Kingdom of ♕ **Reinn_sama, Monkey D. Luffy**! :european_castle:')
 
