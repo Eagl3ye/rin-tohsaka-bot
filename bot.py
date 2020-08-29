@@ -104,7 +104,7 @@ async def ex(ctx):
 		colour=discord.Colour.dark_red()
 		)
 	new_embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
-	new_embed.set_footer(icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
+	new_embed.set_footer(text='Belongs to Reinn_sama', icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
 
 	def check(reaction, user):
 		return (reaction.message.id == msg.id and user.id == 336068309789310979) #487935377219256343
@@ -114,7 +114,7 @@ async def ex(ctx):
 		print('Timeout')
 	else:
 		print('Rheana reacted')
-		await msg.edit(text='Belongs to Reinn_sama', embed=new_embed)
+		await msg.edit(embed=new_embed)
 		await ctx.send('Welcome to the Kingdom of ♕ **Reinn_sama, Monkey D. Luffy**! :european_castle:')
 
 client.run(os.environ['TOKEN'])
