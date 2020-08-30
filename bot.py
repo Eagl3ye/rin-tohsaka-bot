@@ -14,8 +14,7 @@ def mudae_randomize():
 
 letters = ['a','b','c','d','e','f','g','h','i','j','k']
 def mudae_choice():
-	print(letters.pop(random.randint(0,10)))
-	#return str(letters.pop(random.randint(0,10)))
+	return str(letters.pop(random.randint(0,10)))
 
 mudae_events_list = {
 		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],								# 1%
@@ -69,7 +68,7 @@ async def mudae_event(ctx, mode=None, number=1):
 		if number < 1:
 			number = 1
 		for _ in range(number):
-			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_choice()], value=mudae_events_list[mudae_randomize()][1], inline=False)
+			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_choice()][0], value=mudae_events_list[mudae_choice()][1], inline=False)
 		letters = ['a','b','c','d','e','f','g','h','i','j','k']
 		embed.set_footer(text='New events will be added tomorrow... stay tuned!')
 		#await ctx.send(content=":heart_exclamation: Attention to all <@&742333248125927425> :heart_exclamation:")
