@@ -91,6 +91,7 @@ async def baog(ctx):
 
 @client.command()
 async def rules(ctx):
+	msg = ctx.message
 	rules = [
 		'**1** ►   Same rules as any righteous groups or servers.',
 		'**2** ►   Please be respectful towards everyone. This means __**NO HATE**__ and whatever variant of this rule applies.',
@@ -106,49 +107,27 @@ async def rules(ctx):
 		colour=discord.Colour.from_rgb(102, 255, 153)
 		)
 	await ctx.send(embed=embed)
+	await msg.delete()
 
 @client.command()
 async def campus(ctx):
+	msg = ctx.message
 	description = '► React to give yourself a role.\n\n'
 	reacts = [
-		':white_circle:',
-		':black_circle:',
-		':red_circle:',
-		':blue_circle:',
-		':brown_circle:',
-		':purple_circle:',
-		':green_circle:',
-		':yellow_circle:',
-		':orange_circle:',
-		':white_large_square:',
-		':black_large_square:',
-		':orange_square:',
-		':blue_square:',
-		':red_square:',
-		':brown_square:',
-		'\u200b',
-		':purple_square:',
-		'\u200b'
+		':white_circle:',':black_circle:',':red_circle:',
+		':blue_circle:',':brown_circle:',':purple_circle:',
+		':green_circle:',':yellow_circle:',':orange_circle:',
+		':white_large_square:',':black_large_square:',':orange_square:',
+		':blue_square:',':red_square:',':brown_square:',
+		'\u200b',':purple_square:','\u200b'
 	]
 	roles = [
-		'IRC',
-		'CLC',
-		'EVC',
-		'CVisC',
-		'CVC',
-		'WVC',
-		'MRC',
-		'MC',
-		'CBZRC',
-		'ZPRC',
-		'CARC',
-		'CMC',
-		'CRC',
-		'SMC',
-		'BRC',
-		'\u200b',
-		'SRC',
-		'\u200b'
+		'IRC','CLC','EVC',
+		'CVisC','CVC','WVC',
+		'MRC','MC','CBZRC',
+		'ZPRC','CARC','CMC',
+		'CRC','SMC','BRC',
+		'\u200b','SRC','\u200b'
 	]
 	embed = discord.Embed(
 		title=':round_pushpin: **ROLE MENU: Campus** :round_pushpin:\n',
@@ -158,5 +137,6 @@ async def campus(ctx):
 	for react, role in zip(reacts, roles):
 		embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=True)
 	await ctx.send(embed=embed)
+	await msg.delete()
 
 client.run(os.environ['TOKEN'])
