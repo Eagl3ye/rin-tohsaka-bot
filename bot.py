@@ -126,7 +126,9 @@ async def campus(ctx):
 		':blue_square:',
 		':red_square:',
 		':brown_square:',
-		':purple_square:'
+		'\u200b',
+		':purple_square:',
+		'\u200b'
 	]
 	roles = [
 		'IRC',
@@ -144,7 +146,9 @@ async def campus(ctx):
 		'CRC',
 		'SMC',
 		'BRC',
-		'SRC'
+		'\u200b',
+		'SRC',
+		'\u200b'
 	]
 	embed = discord.Embed(
 		title=':round_pushpin: **ROLE MENU: Campus** :round_pushpin:\n',
