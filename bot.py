@@ -188,10 +188,10 @@ async def campus(ctx):
 	count = 0
 	for react, role in zip(reacts, roles):
 		if count < 1:
-			embed.add_field(name=react+'**'+role+'**', value=, inline=False)
+			embed.add_field(name=react+'**'+role+'**', value='\u200b', inline=False)
 			count = 1
 		else:
-			embed.add_field(name=react+'**'+role+'**', value=, inline=True)
+			embed.add_field(name=react+'**'+role+'**', value='\u200b', inline=True)
 			count = 0
 	await ctx.send(embed=embed)
 
