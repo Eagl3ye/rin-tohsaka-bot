@@ -143,7 +143,7 @@ async def rules(ctx):
 
 @client.command()
 async def campus(ctx):
-	description = '► React to give yourself a role.'
+	description = '► React to give yourself a role.\n\n'
 	reacts = [
 		':white_circle:',
 		':black_circle:',
@@ -187,11 +187,11 @@ async def campus(ctx):
 		)
 	count = 0
 	for react, role in zip(reacts, roles):
-		if count < 1:
-			embed.add_field(name=react+'**'+role+'**', value='\u200b', inline=False)
-			count = 1
+		if count < 2:
+			embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=False)
+			count += 1
 		else:
-			embed.add_field(name=react+'**'+role+'**', value='\u200b', inline=True)
+			embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=True)
 			count = 0
 	await ctx.send(embed=embed)
 
