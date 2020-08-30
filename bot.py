@@ -167,7 +167,7 @@ async def treasure(ctx):
 async def announce(ctx, color_r=0, color_g=0, color_b=0, *, content:str):
 	msg = ctx.message
 	description = '► '
-	for text in content.split('\n')
+	for text in content.split('\n'):
 		description += text+'\n'
 	embed = discord.Embed(
 		title=':round_pushpin: **ANNOUNCEMENT** :round_pushpin:\n',
