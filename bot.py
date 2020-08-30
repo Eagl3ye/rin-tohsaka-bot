@@ -185,14 +185,8 @@ async def campus(ctx):
 		description=description,
 		colour=discord.Colour.from_rgb(102, 255, 153)
 		)
-	count = 0
 	for react, role in zip(reacts, roles):
-		if count < 2:
-			embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=True)
-			count += 1
-		else:
-			embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=False)
-			count = 0
+		embed.add_field(name=react+' **'+role+'**', value='\u200b', inline=True)
 	await ctx.send(embed=embed)
 
 client.run(os.environ['TOKEN'])
