@@ -131,7 +131,9 @@ async def rules(ctx):
 		'**3** ►   No self-promotion without admin permission.\n',
 		'**4** ►   Yeah have fun.\n'
 	]
-	flatrules += rule for rule in rules
+	flatrules = ''
+	for rule in rules:
+		flatrules += rule
 	embed = discord.Embed(
 		title=':round_pushpin: **SERVER RULES** :round_pushpin:\n',
 		description=flatrules,
