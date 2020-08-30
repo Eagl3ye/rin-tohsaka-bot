@@ -56,7 +56,7 @@ async def mudae_event(ctx, mode=None, number=1):
 	elif mode == "release":
 		embed = discord.Embed(
 			title=':heart_exclamation: **Mudae Event:** :heart_exclamation:',
-			description='► The following randomly-picked events will be __**removed**__ for tommorrow\'s mudae event:',
+			description='► The following randomly-picked events will be __**removed**__ for tomorrow\'s mudae event:',
 			colour=discord.Colour.from_rgb(255, 25, 25)
 			)
 		if number > 4:
@@ -65,7 +65,8 @@ async def mudae_event(ctx, mode=None, number=1):
 			number = 1
 		for _ in range(number):
 			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
-		await ctx.send(content=":heart_exclamation: Attention ")
+		embed.set_footer(text='New events will be added tomorrow... stay tuned!')
+		await ctx.send(content=":heart_exclamation: Attention to all <@&742333248125927425> :heart_exclamation:")
 		await ctx.send(embed=embed)
 	await msg.delete()
 
