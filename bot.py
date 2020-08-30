@@ -112,7 +112,7 @@ async def rules(ctx):
 @client.command()
 async def campus(ctx):
 	msg = ctx.message
-	description = '► React to give yourself a role.'+('\u200b')*25
+	description = '► React to give yourself a role.'+(' ')*25
 	reacts = [
 		':white_circle:',':black_circle:',':red_circle:',
 		':blue_circle:',':brown_circle:',':purple_circle:',
