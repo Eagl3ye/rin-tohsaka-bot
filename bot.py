@@ -108,8 +108,7 @@ async def ex(ctx):
 				colour=discord.Colour.red()
 				)
 			new_embed.set_image(url='https://i.imgur.com/9UVKIr1.png')
-			new_embed.set_footer(text='Belongs to Reinn_sama', icon_url='https://cdn.discordapp.com/avatars/336068309789310979/1b55c58deb626315462eac731d5716c8.png')
-				#'https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png'
+			new_embed.set_footer(text='Belongs to Reinn_sama', icon_url='https://cdn.discordapp.com/avatars/487935377219256343/2656f554ae5e6ff7d703512f29414984.png')
 
 			def check(reaction, user):
 				print(str(user.id))
@@ -123,5 +122,21 @@ async def ex(ctx):
 				print('Rheana reacted')
 				await msg.edit(embed=new_embed)
 				await ctx.send('Welcome to the Kingdom of ♕ **Reinn_sama, Monkey D. Luffy**! :european_castle:')
+
+@client.command()
+async def rules(ctx):
+	rules = [
+		'**1** ►   Same rules as any righteous groups or servers.\n',
+		'**2** ►   Please be respectful towards everyone. This means __**NO HATE**__ and whatever variant of this rule applies.\n',
+		'**3** ►   No self-promotion without admin permission.\n',
+		'**4** ►   Yeah have fun.\n'
+	]
+	flatrules += rule for rule in rules
+	embed = discord.Embed(
+		title=':round_pushpin: **SERVER RULES** :round_pushpin:\n',
+		description=flatrules,
+		colour=discord.Colour.black()
+		)
+	await ctx.send(embed=embed)
 
 client.run(os.environ['TOKEN'])
