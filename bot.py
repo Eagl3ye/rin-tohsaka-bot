@@ -164,7 +164,7 @@ async def treasure(ctx):
 	await msg.delete()
 
 @client.command()
-async def announce(ctx, color_r=0, color_g=0, color_b=0, content=""):
+async def announce(ctx, color_r=0, color_g=0, color_b=0, *, content:str):
 	msg = ctx.message
 	description = '► '+content
 	embed = discord.Embed(
