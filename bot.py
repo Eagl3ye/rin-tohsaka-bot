@@ -14,7 +14,8 @@ def mudae_randomize():
 
 letters = ['a','b','c','d','e','f','g','h','i','j','k']
 def mudae_choice():
-	return str(letters.pop(random.randint(0,10)))
+	print(letters.pop(random.randint(0,10))
+	#return str(letters.pop(random.randint(0,10)))
 
 mudae_events_list = {
 		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],								# 1%
