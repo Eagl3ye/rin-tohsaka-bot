@@ -86,7 +86,7 @@ async def arena_event(ctx):
 @client.command()
 async def baog(ctx):
 	await ctx.send(content='<a:baoggif:746755743809667193>')
-	await ctx.delete()
+	await ctx.message.delete()
 
 count = 0
 @client.command()
@@ -126,19 +126,71 @@ async def ex(ctx):
 @client.command()
 async def rules(ctx):
 	rules = [
-		'**1** ►   Same rules as any righteous groups or servers.\n',
-		'**2** ►   Please be respectful towards everyone. This means __**NO HATE**__ and whatever variant of this rule applies.\n',
-		'**3** ►   No self-promotion without admin permission.\n',
-		'**4** ►   Yeah have fun.\n'
+		'**1** ►   Same rules as any righteous groups or servers.',
+		'**2** ►   Please be respectful towards everyone. This means __**NO HATE**__ and whatever variant of this rule applies.',
+		'**3** ►   No self-promotion without admin permission.',
+		'**4** ►   Yeah have fun.'
 	]
 	flatrules = ''
 	for rule in rules:
-		flatrules += rule
+		flatrules += rule + '\n\n'
 	embed = discord.Embed(
 		title=':round_pushpin: **SERVER RULES** :round_pushpin:\n',
 		description=flatrules,
 		colour=discord.Colour.from_rgb(102, 255, 153)
 		)
 	await ctx.send(embed=embed)
+
+@client.command()
+async def campus(ctx):
+	description = 'React to give yourself a role.'
+	reacts = [
+		':white_circle:',
+		':black_circle:',
+		':red_circle:',
+		':blue_circle:',
+		':brown_circle:',
+		':purple_circle:',
+		':green_circle:',
+		':yellow_circle:',
+		':orange_circle:',
+		':white_large_square:',
+		':black_large_square:',
+		':orange_square:',
+		':blue_square:',
+		':red_square:',
+		':brown_square:',
+		':purple_square:'
+	]
+	roles = [
+		': IRC',
+		': CLC',
+		': EVC',
+		': CVisC',
+		': CVC',
+		': WVC',
+		': MRC',
+		': MC',
+		': CBZRC',
+		': ZPRC',
+		': CARC',
+		': CMC',
+		': CRC',
+		': SMC',
+		': BRC',
+		': SRC'
+	]
+	flatrules = ''
+	for rule in rules:
+		flatrules += rule + '\n\n'
+	embed = discord.Embed(
+		title=':round_pushpin: **ROLE MENU: Campus** :round_pushpin:\n',
+		description=description,
+		colour=discord.Colour.from_rgb(102, 255, 153)
+		)
+	for react, role in zip(reacts, roles):
+		embed.add_field(name=react, value='***'+role+'***', inline=True)
+	await ctx.send(embed=embed)
+
 
 client.run(os.environ['TOKEN'])
