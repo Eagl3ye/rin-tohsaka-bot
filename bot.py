@@ -38,19 +38,37 @@ async def on_ready():
 	print(client.user.id)
 
 @client.command()
-async def mudae_event(ctx, number=1):
-	embed = discord.Embed(
-		title=':heart_exclamation: **Mudae Event** :heart_exclamation:',
-		colour=discord.Colour.red()
-		)
-	if number > 4:
-		number = 4
-	if number < 1:
-		number = 1
-	for _ in range(number):
-		embed.add_field(name='📍| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
+async def mudae_event(ctx, mode=None, number=1):
+	msg = ctx.message
+	if mode is None or mode == "spawn":
+		embed = discord.Embed(
+			title=':heart_exclamation: **Mudae Event** :heart_exclamation:',
+			colour=discord.Colour.red()
+			)
+		if number > 4:
+			number = 4
+		if number < 1:
+			number = 1
+		for _ in range(number):
+			embed.add_field(name='📍| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
 
-	await ctx.send(embed=embed)
+		await ctx.send(embed=embed)
+	elif mode == "release":
+		embed = discord.Embed(
+			title=':heart_exclamation: **Mudae Event:** :heart_exclamation:',
+			description='► The following randomly-picked events will be __**removed**__ for tommorrow\'s mudae event:',
+			colour=discord.Colour.from_rgb(255, 25, 25)
+			)
+		if number > 4:
+			number = 4
+		if number < 1:
+			number = 1
+		for _ in range(number):
+			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
+		await ctx.send(content=":heart_exclamation: Attention ")
+		await ctx.send(embed=embed)
+	await msg.delete()
+
     #await ctx.send(":heart_exclamation: **Mudae Event** :heart_exclamation: \n```📍 | " + events[randomize()] + "\n```")
 
 @client.command()
