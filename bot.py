@@ -164,7 +164,15 @@ async def treasure(ctx):
 	await msg.delete()
 
 @client.command()
-async def announce(ctx, color, ):
-	pass
+async def announce(ctx, color_r=0, color_g=0, color_b=0, content=""):
+	msg = ctx.message
+	description = '► '+content
+	embed = discord.Embed(
+		title=':round_pushpin: **ANNOUNCEMENT** :round_pushpin:\n',
+		description=description,
+		colour=discord.Colour.from_rgb(color_r, color_g, color_b)
+		)
+	await ctx.send(embed=embed)
+	await msg.delete()
 
 client.run(os.environ['TOKEN'])
