@@ -86,7 +86,7 @@ async def arena_event(ctx):
 @client.command()
 async def baog(ctx):
 	await ctx.send(content='<a:baoggif:746755743809667193>')
-	await discord.message.delete(ctx.message)
+	await delete(ctx.message)
 
 @client.command()
 async def rules(ctx):
