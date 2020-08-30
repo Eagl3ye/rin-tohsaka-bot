@@ -12,22 +12,18 @@ def mudae_randomize():
 	string = list(string)
 	return string.pop(random.randint(0,99))
 
-letters = ['a','b','c','d','e','f','g','h','i','j','k']
-def mudae_choice():
-	return str(letters.pop(random.randint(0,len(letters))))
-
 mudae_events_list = {
 		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],								# 1%
-		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],						# 8%
-		"c":["UNLUCKY EVENT","Force-divorce the highest-kakera character"],			# 6%
+		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],							# 8%
+		"c":["UNLUCKY EVENT","Force-divorce the highest-kakera character"],				# 6%
 		"d":["UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)"],		# 9%
-		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], # 11%
+		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 	# 11%
 		"f":["UNLUCKY EVENT","Pay 1500 kakera"],										# 16%
-		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],						# 4%
-		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],				# 2%
-		"i":["LUCKY EVENT","Earn 200 kakera"],										# 20%
-		"j":["LUCKY EVENT","Earn 100 daily kakera for 7 days (Random player)"],		# 18%
-		"k":["LUCKY EVENT","Next event immunity (random player)"]					# 5%
+		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],							# 4%
+		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],					# 2%
+		"i":["LUCKY EVENT","Earn 200 kakera"],											# 20%
+		"j":["LUCKY EVENT","Earn 100 daily kakera for 7 days (Random player)"],			# 18%
+		"k":["LUCKY EVENT","Next event immunity (random player)"]						# 5%
 	}
 		#BURN THE FIRST THING YOU ROLL
 		#
@@ -68,7 +64,7 @@ async def mudae_event(ctx, mode=None, number=1):
 		if number < 1:
 			number = 1
 		for _ in range(number):
-			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_choice()][0], value=mudae_events_list[mudae_choice()][1], inline=False)
+			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_randomize()][0], value=+mudae_events_list[mudae_randomize()][0], inline=False)
 		letters = ['a','b','c','d','e','f','g','h','i','j','k']
 		embed.set_footer(text='New events will be added tomorrow... stay tuned!')
 		#await ctx.send(content=":heart_exclamation: Attention to all <@&742333248125927425> :heart_exclamation:")
@@ -166,5 +162,9 @@ async def treasure(ctx):
 	msg = ctx.message
 	await ctx.send(content='https://cdn.discordapp.com/emojis/677420843076288522.gif?v=1')
 	await msg.delete()
+
+@client.command()
+async def announce(ctx, color, ):
+	pass
 
 client.run(os.environ['TOKEN'])
