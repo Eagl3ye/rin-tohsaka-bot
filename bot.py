@@ -137,7 +137,7 @@ async def rules(ctx):
 	embed = discord.Embed(
 		title=':round_pushpin: **SERVER RULES** :round_pushpin:\n',
 		description=flatrules,
-		colour=discord.Colour.black()
+		colour=discord.Colour.from_rgb(102, 255, 153)()
 		)
 	await ctx.send(embed=embed)
 
