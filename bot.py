@@ -139,4 +139,10 @@ async def campus(ctx):
 	await ctx.send(embed=embed)
 	await msg.delete()
 
+@client.command()
+async def treasure(ctx):
+	msg = ctx.message
+	await ctx.send(content='https://cdn.discordapp.com/emojis/677420843076288522.gif?v=1')
+	await msg.delete()
+
 client.run(os.environ['TOKEN'])
