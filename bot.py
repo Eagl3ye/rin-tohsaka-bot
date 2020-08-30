@@ -85,8 +85,8 @@ async def arena_event(ctx):
 
 @client.command()
 async def baog(ctx):
+	await ctx.message.edit(content=None)
 	await ctx.send(content='<a:baoggif:746755743809667193>')
-	print(ctx.message)
 
 count = 0
 @client.command()
