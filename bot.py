@@ -143,7 +143,7 @@ async def rules(ctx):
 
 @client.command()
 async def campus(ctx):
-	description = 'React to give yourself a role.'
+	description = '► React to give yourself a role.'
 	reacts = [
 		':white_circle:',
 		':black_circle:',
@@ -163,30 +163,36 @@ async def campus(ctx):
 		':purple_square:'
 	]
 	roles = [
-		': IRC',
-		': CLC',
-		': EVC',
-		': CVisC',
-		': CVC',
-		': WVC',
-		': MRC',
-		': MC',
-		': CBZRC',
-		': ZPRC',
-		': CARC',
-		': CMC',
-		': CRC',
-		': SMC',
-		': BRC',
-		': SRC'
+		'IRC',
+		'CLC',
+		'EVC',
+		'CVisC',
+		'CVC',
+		'WVC',
+		'MRC',
+		'MC',
+		'CBZRC',
+		'ZPRC',
+		'CARC',
+		'CMC',
+		'CRC',
+		'SMC',
+		'BRC',
+		'SRC'
 	]
 	embed = discord.Embed(
 		title=':round_pushpin: **ROLE MENU: Campus** :round_pushpin:\n',
 		description=description,
 		colour=discord.Colour.from_rgb(102, 255, 153)
 		)
+	count = 0
 	for react, role in zip(reacts, roles):
-		embed.add_field(name=react, value='***'+role+'***', inline=True)
+		if count < 1:
+			embed.add_field(name=react+'**'+role+'**', value=, inline=False)
+			count = 1
+		else:
+			embed.add_field(name=react+'**'+role+'**', value=, inline=True)
+			count = 0
 	await ctx.send(embed=embed)
 
 client.run(os.environ['TOKEN'])
