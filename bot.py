@@ -180,9 +180,6 @@ async def campus(ctx):
 		': BRC',
 		': SRC'
 	]
-	flatrules = ''
-	for rule in rules:
-		flatrules += rule + '\n\n'
 	embed = discord.Embed(
 		title=':round_pushpin: **ROLE MENU: Campus** :round_pushpin:\n',
 		description=description,
@@ -191,6 +188,5 @@ async def campus(ctx):
 	for react, role in zip(reacts, roles):
 		embed.add_field(name=react, value='***'+role+'***', inline=True)
 	await ctx.send(embed=embed)
-
 
 client.run(os.environ['TOKEN'])
