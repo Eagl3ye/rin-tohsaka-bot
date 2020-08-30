@@ -166,6 +166,7 @@ async def treasure(ctx):
 @client.command()
 async def announce(ctx, color_r=0, color_g=0, color_b=0, *, content:str):
 	msg = ctx.message
+	print(content.split('\n'))
 	description = '► '
 	for text in content.split('\n'):
 		description += text+'\n'
