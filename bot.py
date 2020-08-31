@@ -54,7 +54,8 @@ async def mudae_event(ctx, mode=None, number=1):
 		if number < 1:
 			number = 1
 		for _ in range(number):
-			embed.add_field(name='📍| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
+			choice = mudae_randomize()
+			embed.add_field(name='📍| '+mudae_events_list[choice][0], value=mudae_events_list[choice][1], inline=False)
 
 		await ctx.send(embed=embed)
 	elif mode == "release":
