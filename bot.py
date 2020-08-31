@@ -70,7 +70,7 @@ async def mudae_event(ctx, mode=None, number=1):
 			number = 1
 		for _ in range(number):
 			choice = mudae_randomize()
-			embed.add_field(name=':outbox_tray:| '+mudae_events_list[choice()][0], value=mudae_events_list[choice][1], inline=False)
+			embed.add_field(name=':outbox_tray:| '+mudae_events_list[choice][0], value=mudae_events_list[choice][1], inline=False)
 		#letters = ['a','b','c','d','e','f','g','h','i','j','k']
 		embed.set_footer(text='New events will be added later... stay tuned!')
 		#await ctx.send(content=":heart_exclamation: Attention to all <@&742333248125927425> :heart_exclamation:")
