@@ -12,6 +12,10 @@ def mudae_randomize():
 	string = list(string)
 	return string.pop(random.randint(0,99))
 
+#def mudae_release():
+#	letters = ['a','b','c','d','e','f','g','h','i','j','k']
+#	return letters[random.randint(0,len(container)-1)]
+
 mudae_events_list = {
 		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],								# 1%
 		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],							# 8%
@@ -55,7 +59,7 @@ async def mudae_event(ctx, mode=None, number=1):
 		await ctx.send(embed=embed)
 	elif mode == "release":
 		embed = discord.Embed(
-			title=':heart_exclamation: **Mudae Event:** :heart_exclamation:',
+			title=':heart_exclamation: **Mudae Event** :heart_exclamation:',
 			description='► The following randomly-picked events will be __**removed**__ for this week\'s mudae event:',
 			colour=discord.Colour.from_rgb(255, 230, 230)
 			)
@@ -64,7 +68,7 @@ async def mudae_event(ctx, mode=None, number=1):
 		if number < 1:
 			number = 1
 		for _ in range(number):
-			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][0], inline=False)
+			embed.add_field(name=':outbox_tray:| '+mudae_events_list[mudae_randomize()][0], value=mudae_events_list[mudae_randomize()][1], inline=False)
 		#letters = ['a','b','c','d','e','f','g','h','i','j','k']
 		embed.set_footer(text='New events will be added later... stay tuned!')
 		#await ctx.send(content=":heart_exclamation: Attention to all <@&742333248125927425> :heart_exclamation:")
