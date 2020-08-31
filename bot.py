@@ -5,7 +5,7 @@ import random
 import asyncio
 
 def mudae_randomize():
-	container = [("a"*1),("h"*2),("g"*4),("k"*5),("c"*6),("b"*8),("d"*9),("e"*11),("f"*16),("j"*18),("i"*20)]
+	container = [("a"*1),("b"*9),("c"*12),("d"*11),("e"*10),("f"*9),("g"*9),("h"*6),("i"*18),("j"*7),("k"*8)]
 	string = ""
 	while(len(container)>0):
 		string += container.pop(random.randint(0,len(container)-1))
@@ -17,17 +17,19 @@ def mudae_randomize():
 #	return letters[random.randint(0,len(container)-1)]
 
 mudae_events_list = {
-		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],								# 1%
-		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],							# 8%
-		"c":["UNLUCKY EVENT","Force-divorce the highest-kakera character"],				# 6%
-		"d":["UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)"],		# 9%
-		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 	# 11%
-		"f":["UNLUCKY EVENT","Pay 1500 kakera"],										# 16%
-		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],							# 4%
-		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],					# 2%
-		"i":["LUCKY EVENT","Earn 200 kakera"],											# 20%
-		"j":["LUCKY EVENT","Earn 100 daily kakera for 7 days (Random player)"],			# 18%
-		"k":["LUCKY EVENT","Next event immunity (random player)"]						# 5%
+		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],											# 1%
+		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],										# 9%
+		"c":["UNLUCKY EVENT","Limit your harem to 50 for a week"],									# 12%
+		#"Force-divorce the highest-kakera character"],										# 6%
+		"d":["UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)"],					# 11%
+		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 				# 10%
+		"f":["UNLUCKY EVENT","Pay 2000 kakera"],													# 9%
+		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],										# 9%
+		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],								# 6%
+		"i":["LUCKY EVENT","Earn 200 kakera"],														# 18% 
+		"j":["LUCKY EVENT","Earn 1x Two lock-in rights during Thanos/Reset (3 random players)"],	# 7%	
+		#"Earn 100 daily kakera for 7 days (Random player)"],								# 18%
+		"k":["LUCKY EVENT","Next event immunity (random player)"]									# 8%
 	}
 		#BURN THE FIRST THING YOU ROLL
 		#
@@ -172,20 +174,39 @@ async def treasure(ctx):
 @client.command()
 async def announce(ctx, color_r=0, color_g=0, color_b=0, *, content:str):
 	msg = ctx.message
-	print(content.split('\n'))
-	description = ''
-	for text in content.split('\n'):
-		description += text+'\n'
 	embed = discord.Embed(
 		title=':round_pushpin: **ANNOUNCEMENT** :round_pushpin:\n',
-		description=description,
+		description=content,
 		colour=discord.Colour.from_rgb(color_r, color_g, color_b)
 		)
 	await ctx.send(embed=embed)
 	await msg.delete()
 
+@client.command()
+async def mudae_announce(ctx, *, content:str):
+	msg = ctx.message
+	embed = discord.Embed(
+		title=':heart_exclamation: **Mudae Event** :heart_exclamation:',
+		description=content,
+		colour=discord.Colour.red()
+		)
+	await ctx.send(embed=embed)
+	await msg.delete()
 client.run(os.environ['TOKEN'])
 
 
 
 #await bot.process_commands(message)
+'''
+ 1% - Server-wide Thanos Snap
+ 6% - Earn 1x Trading Power (Random player)
+ 7% - Earn 1x Two lock-in rights during Thanos/Reset (3 random players)
+ 8% - Next event immunity (random player)
+ 9% - Force-divorce all firstmarries
+ 9% - Pay 2000 kakera
+ 9% - Thanos Snap (2 random players)
+10% - Send any character to someone (Must be 250-ka above)
+11% - Force-divorce 2 random characters (500-ka below)
+12% - Limit your harem to 50 for a week
+18% - Earn 200 kakera
+'''
