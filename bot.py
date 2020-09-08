@@ -5,7 +5,7 @@ import random
 import asyncio
 
 def mudae_randomize():
-	container = [("a"*1),("b"*9),("c"*12),("d"*11),("e"*10),("f"*9),("g"*9),("h"*6),("i"*18),("j"*7),("k"*8)]
+	container = [("a"*1),("b"*6),("c"*8),("d"*14),("e"*14),("f"*15),("g"*7),("h"*4),("i"*11),("j"*15),("k"*5)]
 	string = ""
 	while(len(container)>0):
 		string += container.pop(random.randint(0,len(container)-1))
@@ -17,22 +17,22 @@ def mudae_randomize():
 #	return letters[random.randint(0,len(container)-1)]
 
 mudae_events_list = {
-		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],											# 1%
-		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],										# 9%
-		"c":["UNLUCKY EVENT","Limit your harem to 50 for a week"],									# 12%
-		#"Force-divorce the highest-kakera character"],										# 6%
-		"d":["UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)"],					# 11%
-		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 				# 10%
-		"f":["UNLUCKY EVENT","Pay 2000 kakera"],													# 9%
-		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],										# 9%
-		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],								# 6%
-		"i":["LUCKY EVENT","Earn 200 kakera"],														# 18% 
-		"j":["LUCKY EVENT","Earn 1x Two lock-in rights during Thanos/Reset (3 random players)"],	# 7%	
-		#"Earn 100 daily kakera for 7 days (Random player)"],								# 18%
-		"k":["LUCKY EVENT","Next event immunity (random player)"]									# 8%
+		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],																																									# 1%
+		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],																																								# 6%
+		"c":["UNLUCKY EVENT","Limit your harem to 50 for a week"],																																							# 8%
+		"d":["UNLUCKY EVENT","Remove kakera 300 (All)"], 																																									# 14%
+		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 																																		# 14%
+		"f":["UNLUCKY EVENT","Right to choose from the top 4 of $tsv the one who will receive __**Force-divorce random character**__ (200<:kakera:748810456671453296> - 499<:kakera:748810456671453296>)"], 				# 15%
+		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],																																								# 7%
+		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],																																						# 4%
+		"i":["LUCKY EVENT","Earn 200 kakera"],																																												# 11% 
+		"j":["LUCKY EVENT","Earn 1x Two lock-in rights during Thanos/Reset (3 random players)"],																															# 15%	
+		"k":["LUCKY EVENT","Next event immunity (random player)"]																																							# 5%
+		#"UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)",				
+		#"UNLUCKY EVENT","Pay 2000 kakera"],												
+		#"Earn 100 daily kakera for 7 days (Random player)"],								
+		#"Force-divorce the highest-kakera character",										
 	}
-		#BURN THE FIRST THING YOU ROLL
-		#
 
 client = commands.Bot(command_prefix = 'r!')
 
@@ -197,16 +197,17 @@ client.run(os.environ['TOKEN'])
 
 
 #await bot.process_commands(message)
+
 '''
  1% - Server-wide Thanos Snap
- 6% - Earn 1x Trading Power (Random player)
- 7% - Earn 1x Two lock-in rights during Thanos/Reset (3 random players)
- 8% - Next event immunity (random player)
- 9% - Force-divorce all firstmarries
- 9% - Pay 2000 kakera
- 9% - Thanos Snap (2 random players)
-10% - Send any character to someone (Must be 250-ka above)
-11% - Force-divorce 2 random characters (500-ka below)
-12% - Limit your harem to 50 for a week
-18% - Earn 200 kakera
+ 4% - Earn 1x Trading Power (Random player)
+ 5% - Next event immunity (random player)
+ 6% - Force-divorce all firstmarries
+ 7% - Thanos Snap (2 random players)
+ 8% - Limit your harem to 50 for a week
+11% - Earn 200 kakera
+14% - Remove kakera 300 (All)
+14% - Send any character to someone (Must be 250-ka above)
+15% - Right to choose from the top 4 of $tsv the one who will receive __**Force-divorce random character**__ (200<:kakera:748810456671453296> - 499<:kakera:748810456671453296>)
+15% - Earn 1x Two lock-in rights during Thanos/Reset (3 random players)
 '''
