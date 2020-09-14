@@ -5,7 +5,7 @@ import random
 import asyncio
 
 def mudae_randomize():
-	container = [("a"*1),("b"*6),("c"*8),("d"*14),("e"*14),("f"*15),("g"*7),("h"*4),("i"*11),("j"*15),("k"*5)]
+	container = [("a"*1),("b"*7),("c"*9),("d"*13),("e"*13),("f"*13),("g"*8),("h"*5),("i"*12),("j"*13),("k"*6)]
 	string = ""
 	while(len(container)>0):
 		string += container.pop(random.randint(0,len(container)-1))
@@ -20,15 +20,17 @@ mudae_events_list = {
 		"a":["UNLUCKY EVENT","Server-wide Thanos Snap"],																																									# 1%
 		"b":["UNLUCKY EVENT","Force-divorce all firstmarries"],																																								# 6%
 		"c":["UNLUCKY EVENT","Limit your harem to 50 for a week"],																																							# 8%
-		"d":["UNLUCKY EVENT","Remove kakera 300 (All)"], 																																									# 14%
-		"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 																																		# 14%
+		"d":["UNLUCKY EVENT","Remove kakera 300 (All)"], 
+		"e":["NEUTRAL EVENT","Reroll mudae events"],																																											# 14%
 		"f":["UNLUCKY EVENT","Right to choose from the top 4 of $tsv the one who will receive __**Force-divorce random character**__ (200<:kakera:748810456671453296> - 499<:kakera:748810456671453296>)"], 				# 15%
 		"g":["UNLUCKY EVENT","Thanos Snap (2 random players)"],																																								# 7%
-		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],																																						# 4%
-		"i":["LUCKY EVENT","Earn 200 kakera"],																																												# 11% 
+		"h":["LUCKY EVENT","Earn 1x Trading Power (Random player)"],
+		"i":["LUCKY EVENT","Earn 1000 kakera (Two random players)"],																																						# 4%
 		"j":["LUCKY EVENT","Earn 1x Two lock-in rights during Thanos/Reset (3 random players)"],																															# 15%	
 		"k":["LUCKY EVENT","Next event immunity (random player)"]																																							# 5%
 		#"UNLUCKY EVENT","Force-divorce 2 random characters (500-ka below)",				
+		#"e":["NEUTRAL EVENT","Send any character to someone (Must be 250-ka above)"], 																																		# 14%
+		#"i":["LUCKY EVENT","Earn 200 kakera"],																																												# 11% 
 		#"UNLUCKY EVENT","Pay 2000 kakera"],												
 		#"Earn 100 daily kakera for 7 days (Random player)"],								
 		#"Force-divorce the highest-kakera character",										
@@ -200,14 +202,14 @@ client.run(os.environ['TOKEN'])
 
 '''
  1% - Server-wide Thanos Snap
- 4% - Earn 1x Trading Power (Random player)
- 5% - Next event immunity (random player)
- 6% - Force-divorce all firstmarries
- 7% - Thanos Snap (2 random players)
- 8% - Limit your harem to 50 for a week
-11% - Earn 200 kakera
-14% - Remove kakera 300 (All)
-14% - Send any character to someone (Must be 250-ka above)
-15% - Right to choose from the top 4 of $tsv the one who will receive __**Force-divorce random character**__ (200<:kakera:748810456671453296> - 499<:kakera:748810456671453296>)
-15% - Earn 1x Two lock-in rights during Thanos/Reset (3 random players)
+ 5% - Earn 1x Trading Power (Random player)
+ 6% - Next event immunity (random player)
+ 7% - Force-divorce all firstmarries
+ 8% - Thanos Snap (2 random players)
+ 9% - Limit your harem to 50 for a week
+12% - Earn 1000 kakera (Two random players)
+13% - Remove kakera 300 (All)
+13% - Reroll mudae events
+13% - Right to choose from the top 4 of $tsv the one who will receive __**Force-divorce random character**__ (200<:kakera:748810456671453296> - 499<:kakera:748810456671453296>)
+13% - Earn 1x Two lock-in rights during Thanos/Reset (3 random players)
 '''
