@@ -16,4 +16,5 @@ async def on_ready():
 client.load_extension("cogs.tools")
 client.load_extension("cogs.events")
 client.load_extension("cogs.utility")
+client.load_extension("cogs.rpg")
 client.run(os.environ['TOKEN'])
