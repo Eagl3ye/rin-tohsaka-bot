@@ -10,7 +10,7 @@ class RPG(commands.Cog):
 	@commands.Cog.listener()
 	async def on_message(self, message):
 		if message.author.id == 555955826880413696 and message.channel.id == 755450243281190994:
-			print(message.type)
+			print(message.embeds)
 	
 '''
 	@commands.command(name="setagree", aliases=['agreezone', 'uni', 'u'])
