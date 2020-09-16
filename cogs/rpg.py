@@ -16,6 +16,7 @@ class RPG(commands.Cog):
 				for field in message.embeds[0].fields:
 					print(field.name)
 					print(field.value)
+			print("---")
 		
 '''
 	@commands.command(name="setagree", aliases=['agreezone', 'uni', 'u'])
