@@ -10,10 +10,13 @@ class RPG(commands.Cog):
 	@commands.Cog.listener()
 	async def on_message(self, message):
 		if message.author.id == 555955826880413696 and message.channel.id == 755450243281190994:
-			for field in message.embeds[0].fields:
-				print(field.name)
-				print(field.value)
-	
+			if message.embeds is None:
+				print(message.content)
+			else:
+				for field in message.embeds[0].fields:
+					print(field.name)
+					print(field.value)
+		
 '''
 	@commands.command(name="setagree", aliases=['agreezone', 'uni', 'u'])
 	@commands.has_guild_permissions(administrator=True)
